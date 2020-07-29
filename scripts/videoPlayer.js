@@ -79,4 +79,8 @@ export const videoPlayerInit = () => {
     videoPlayer.volume = videoVolume.value / 100;
   });
 
+  videoPlayer.volume = .5;
+
+  videoVolume.value = videoPlayer.volume * 100;
+
 };
