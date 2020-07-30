@@ -22,7 +22,6 @@ export const musicPlayerInit = () => {
 
   const loadTrack = () => {
 
-    //играла ли музыка, когда получили трек
     const isPlayed = audioPlayer.paused;
     const track = playlist[trackIndex];
 
@@ -35,27 +34,13 @@ export const musicPlayerInit = () => {
   };
   
   const prevTrack = () => {
-
-    if (trackIndex !== 0) {
-      trackIndex--;
-    } else {
-      trackIndex = playlist.length - 1;
-    }
-
+    (trackIndex !== 0) ? trackIndex-- : (trackIndex = playlist.length - 1);
     loadTrack();
-
   }
 
   const nextTrack = () => {
-
-    if (trackIndex === playlist.length - 1) {
-      trackIndex = 0;
-    } else {
-      trackIndex++;
-    }
-
+    (trackIndex === playlist.length - 1) ? trackIndex = 0 : trackIndex++;
     loadTrack;
-
   };
 
 
